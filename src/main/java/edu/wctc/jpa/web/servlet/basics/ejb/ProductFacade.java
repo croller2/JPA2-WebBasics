@@ -44,10 +44,10 @@ public class ProductFacade extends AbstractFacade<Product> {
             String jpql = "SELECT p FROM Product p WHERE p.PURCHASE_COST > :price";
             Query query = getEntityManager().createQuery(jpql);
             query.setParameter("price", price);
-            query.setMaxResults(10)
+            query.setMaxResults(10);
             return query.getResultList();   
         }catch(NumberFormatException ex){
-            return -1;
+            return null;
         }
     }
     
