@@ -61,7 +61,7 @@ public class ManufacturerFacade extends AbstractFacade<Manufacturer> {
     }
     public int manufacturerToUpper(String id){
         try{
-            String jpql = "UPDATE Manufacturer m set m.name = Upper (m.name) WHERE m.manufacturerId = :manufacturerId";
+            String jpql = "UPDATE Manufacturer m set m.name = Upper(m.name) WHERE m.manufacturerId = :manufacturerId";
             Query query = getEntityManager().createQuery(jpql);
             query.setParameter("manufacturerId", Integer.parseInt(id));
             return query.executeUpdate();    
